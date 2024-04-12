@@ -1,0 +1,16 @@
+extend base
+
+block content 
+    // Sidebar
+    #mySidebar.sidebar
+        a.sidebar-close(href="javascript:void(0)", onclick="closeNav()") &times;
+        h1(style = "color : white;") BINS
+        each bin in bins
+            a(href='/binddetails/'+`${bin.Bin}`)  #{bin.Bin} 
+    .binns 
+        h1 Bins with above 85 percentage will be displayed here
+        each bin in bins 
+            if (parseInt(`${bin.persentagefill}`) >= 85) 
+                h1 
+                    a(href='/binddetails/'+`${bin.Bin}`)  #{bin.Bin} 
+                    | The percentage of the #{bin.Bin} is #{bin.persentagefill}

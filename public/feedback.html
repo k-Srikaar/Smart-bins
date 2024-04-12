@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style_nav.css" />
+    <style>
+      /* Basic Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 300px;
+        margin: 100px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="text"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      textarea{
+        resize: none;  
+      }
+      .text-area{
+        display: flex;
+        justify-content: center;
+        margin-block-end: 1vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a class="active" href="index.html">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="feedback.html">Feedback</a>
+      <div class="navbar-right">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Feedback Form</h2>
+      <form id="FeedbackForm">
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          id="userEmail"
+          name="email"
+          placeholder="Enter your email"
+        />
+        <h3>Give Feedback :</h3>
+        <div class="text-area">
+            <textarea name="textarea" id="userFeedback" cols="30" rows="10" placeholder="Give your valuable feedback ..."></textarea>
+        </div>
+        
+        
+        <input type="submit" value="Submit" />
+      </form>
+      <div id="message">working</div>
+    </div>
+    <footer id="contact"> 
+        <h2>Learn Electronics</h2>
+        <div class="details">
+            <p>Address : Pune</address></p>
+            <p>contact no. : XXXXXXXXXX</p>
+            <p>email : learnelectronics@gmail.com</p>
+        </div>
+        
+    </footer>
+    <script>
+        document.getElementById('FeedbackForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('userEmail').value;
+            const message = document.getElementById('userFeedback').value;
+
+            const response = await fetch('/api/v1/users/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, message })
+            });
+            
+            const data = await response.json();
+            document.getElementById('message').innerText = data.message;
+        });
+    </script>
+  </body>
+</html>

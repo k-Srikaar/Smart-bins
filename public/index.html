@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <!-- Menu Button -->
+    <span style="font-size: 30px; cursor: pointer; margin-right: 10px" onclick="openNav()">&#9776;</span>
+    <a class="active" href="index.html">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="feedback.html">Feedback</a>
+    <div class="navbar-right">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="sidebar-close" onclick="closeNav()">&times;</a>
+    <a href="bindetails.html">Activitiy 1</a>
+    <a href="#section2">Activitiy 2</a>
+    <a href="#section3">Activitiy 3</a>
+  </div>
+
+  <!-- Main Content -->
+  <!-- <div class="main-content">
+    <h1>Lets have a look up of our smart dust bins</h1>
+    <p>
+      This is the main content area. It can contain various sections and
+      information.
+    </p>
+    <section>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7562.635231269952!2d73.87539699999998!3d18.6047786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7173beb8cc7%3A0xcf82a5185d4ab3ec!2sCricket%20Ground!5e0!3m2!1sen!2sin!4v1712049433334!5m2!1sen!2sin"
+        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </div> -->
+  <header>
+    <h1>Welcome to Smart Dustbins</h1>
+    <p>Efficient waste management for cleaner surroundings</p>
+</header>
+<div class="container">
+    <section class="section">
+        <h2>What are Smart Dustbins?</h2>
+        <p>Smart dustbins are innovative waste management solutions equipped with sensors and technology to optimize waste collection processes and improve environmental monitoring.</p>
+    </section>
+    <section class="section">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Automated waste collection</li>
+            <li>Capacity monitoring</li>
+            <li>Environmental sensors (e.g., air quality, temperature)</li>
+            <li>Integration with mobile apps for tracking and management</li>
+            <li>Real-time data reporting</li>
+        </ul>
+    </section>
+    <section class="section">
+        <h2>Benefits</h2>
+        <ul>
+            <li>Efficient waste management leading to cleaner surroundings</li>
+            <li>Reduced operational costs through optimized waste collection schedules</li>
+            <li>Environmental monitoring to support sustainability efforts</li>
+            <li>Convenience for users with automated features</li>
+        </ul>
+    </section>
+
+</div>
+  <footer id="contact"> 
+    <h2>Learn Electronics</h2>
+    <div class="details">
+        <p>Address : Pune</address></p>
+        <p>contact no. : XXXXXXXXXX</p>
+        <p>email : learnelectronics@gmail.com</p>
+    </div>  
+  </footer>
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
+</body>
+
+</html>

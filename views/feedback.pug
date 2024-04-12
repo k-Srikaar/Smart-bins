@@ -1,0 +1,15 @@
+extend base
+
+block content 
+    .container
+        h2 Feedback Form
+        form#FeedbackForm
+            label(for="email") Email:
+            input(type="text", id="userEmail", name="email", placeholder="Enter your email")
+
+            h3 Give Feedback :
+            .text-area
+            textarea#userFeedback(name="textarea", cols="30", rows="10", placeholder="Give your valuable feedback ...")
+            
+            input(type="submit", value="Submit")
+        #message 

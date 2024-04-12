@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Main Page | #{title}
+    link(rel="stylesheet", href="/style.css")
+    link(rel="stylesheet", href="/stylelogin.css")
+    link(rel="stylesheet", href="/stylesignup.css")
+    link(rel="stylesheet", href="/stylefeedback.css")
+    
+  //- AIzaSyCMyS5UsvP3_jpV2pZ1dDsgQ1D_LBT5duo
+  body
+    // Header
+    include header
+
+    // Main Content
+    block content  
+        p This is block container
+
+    // Footer
+    //- include footer
+
+    script.
+        function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        }
+    script(src="/loginscripit.js")
+    script(src="/signupscripit.js")
+    script(src="/feedbackscripit.js") 
+    script(src="/logout.js")
+   
+
+

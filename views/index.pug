@@ -1,0 +1,35 @@
+extend base
+
+block content 
+    // Sidebar
+    #mySidebar.sidebar
+      a.sidebar-close(href="javascript:void(0)", onclick="closeNav()") &times;
+      h1(style = "color : white;") BINS
+      each bin in bins 
+        a(href='/binddetails/'+`${bin.Bin}`) #{bin.Bin}
+    
+
+    // Main Content
+    header
+      h1 Welcome to Smart Dustbins
+      p Efficient waste management for cleaner surroundings
+    .container-index
+      section.section-index
+        h2 What are Smart Dustbins?
+        p Smart dustbins are innovative waste management solutions equipped with sensors and technology to optimize waste collection processes and improve environmental monitoring.
+      section.section-index
+        h2 Key Features
+        ul
+          li Automated waste collection
+          li Capacity monitoring
+          li Environmental sensors (e.g., air quality, temperature)
+          li Integration with mobile apps for tracking and management
+          li Real-time data reporting
+      section.section-index
+        h2 Benefits
+        ul
+          li Efficient waste management leading to cleaner surroundings
+          li Reduced operational costs through optimized waste collection schedules
+          li Environmental monitoring to support sustainability efforts
+          li Convenience for users with automated features
+    

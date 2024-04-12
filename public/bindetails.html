@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <!-- Menu Button -->
+    <span style="font-size: 30px; cursor: pointer; margin-right: 10px" onclick="openNav()">&#9776;</span>
+    <a class="active" href="index.html">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="feedback.html">Feedback</a>
+    <div class="navbar-right">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="sidebar-close" onclick="closeNav()">&times;</a>
+    <a href="#section1">Activitiy 1</a>
+    <a href="#section2">Activitiy 2</a>
+    <a href="#section3">Activitiy 3</a>
+  </div>
+
+  <div class="main-container">
+    <div class="left-container">
+        <iframe class="frame"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7562.635231269952!2d73.87539699999998!3d18.6047786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c7173beb8cc7%3A0xcf82a5185d4ab3ec!2sCricket%20Ground!5e0!3m2!1sen!2sin!4v1712049433334!5m2!1sen!2sin"
+         style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="right-container">
+        <div class="bin">
+            <div class="full" style="height: 20%;">
+                
+            </div>
+            
+        </div>
+        <div class="info">
+            <p>percntage filled : </p>
+            <p>location : </p>
+        </div>
+    </div>
+  </div>
+
+  
+  <footer id="contact"> 
+    <h2>Learn Electronics</h2>
+    <div class="details">
+        <p>Address : Pune</address></p>
+        <p>contact no. : XXXXXXXXXX</p>
+        <p>email : learnelectronics@gmail.com</p>
+    </div>  
+  </footer>
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
+</body>
+
+</html>

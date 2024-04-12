@@ -1,0 +1,64 @@
+extend base
+
+block content 
+    // Sidebar
+    #mySidebar.sidebar
+        a.sidebar-close(href="javascript:void(0)", onclick="closeNav()") &times;
+        h1(style = "color : white;") BINS
+        each bin in bins
+            a(href='/binddetails/'+`${bin.Bin}`)  #{bin.Bin} 
+
+    h1 Map with Latitude and Longitude
+    // Main Container
+    .main-container
+    
+        .left-container
+            #map
+            p#location
+
+        .right-container
+            .bin
+                div.full(style="height:"+ `${bin.persentagefill}` +"%;")
+
+                
+            .info
+                p percentage filled : #{bin.persentagefill}
+                p location : #{bin.coordinates[0]} #{bin.coordinates[1]} 
+    
+
+    script.
+      // Initialize and add the map
+      let map;
+
+      async function initMap() {
+        // The location of Uluru
+        const position = { lat: #{bin.coordinates[0]}, lng: #{bin.coordinates[1]} };
+        // Request needed libraries.
+        //@ts-ignore
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary(
+          "marker"
+        );
+
+        // The map, centered at Uluru
+        map = new Map(document.getElementById("map"), {
+          zoom: 17,
+          center: position,
+          mapId: "DEMO_MAP_ID",
+        });
+
+        // The marker, positioned at Uluru
+        const marker = new AdvancedMarkerElement({
+          map: map,
+          position: position,
+          title: "Uluru",
+        });
+      }
+
+      initMap()
+
+    script(
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMyS5UsvP3_jpV2pZ1dDsgQ1D_LBT5duo&callback=initMap"
+    )
